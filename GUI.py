@@ -8,5 +8,8 @@ while True:
     event, values = window.read()
     if event == sg.WINDOW_CLOSED:
         break
+    elif event == "OK":
+        print("OK")
+        break
 
 window.close()
