@@ -1,13 +1,20 @@
 import requests
 import json
 import os
+import GUI
 
 apiurl = "https://api.scryfall.com/"
 
 def Main():
-    testCard = GetCard(input("input card name: "))
-    print("Found Card - " + testCard["name"])
-    input()
+    #create GUI
+    window = GUI.INIGUI('ScryPY',(500,500))
+
+    while True:
+        event, values = window.read()
+        if event == sg.WINDOW_CLOSED:
+            break
+        elif event == "-SEARCH-":
+            print("OK")
 
 # Gets card json
 def GetCard(x):

@@ -1,15 +1,21 @@
 import PySimpleGUI as sg
 
-ly = [[sg.Text("Hello from PySimpleGUI")], [sg.Button("OK")]]
+left_Col = [
+    [sg.Text("Card Name:"), sg.InputText(key='-CARDNAME-'),sg.Button("Search",key='-SEARCH-')],
+    [sg.Image(key='-CARDFACE-')],
+]
 
-window = sg.Window(title="ScryPY",layout=ly,margins=(400,200))
+right_Col = [
+    []
+]
 
-while True:
-    event, values = window.read()
-    if event == sg.WINDOW_CLOSED:
-        break
-    elif event == "OK":
-        print("OK")
-        break
+page_One = [
+    [
+        sg.Column(left_Col),
+        sg.VSeperator(),
+        sg.Column(right_Col),
+    ]
+]
 
-window.close()
+def INIGUI(winName,margin):
+    return sg.Window(title=winName,layout=page_One,margins=margin)
