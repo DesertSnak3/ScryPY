@@ -17,5 +17,5 @@ page_One = [
     ]
 ]
 
-def INIGUI(winName,margin):
+def INIGUI(winName,margin=(100,100)):
     return sg.Window(title=winName,layout=page_One,margins=margin)
